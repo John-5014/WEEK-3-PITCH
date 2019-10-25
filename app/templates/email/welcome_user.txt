@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to ONE MINUTE PITCHER
+We have just seen you have signed up for our application and want to welcome you to the family. Please enjoy the great pitches that have been shared and share yours as well.

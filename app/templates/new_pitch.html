@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+ {% import 'macros.html' as macro%}
+ {% import 'bootstrap/wtf.html' as wtf %}
+
+{%block styles%}
+  {{ super() }}
+{%endblock%}
+
+<!-- content block -->
+{% block content %}
+<div class="tec" >
+<div class="container" style="margin-top:4%;">
+  <div class="col-md-6">
+      {{wtf.quick_form(pitch_form)}}
+  </div>
+    
+ 
+</div>
+</div>
+<style>
+  .tec{
+    background-image: url('https://images.pexels.com/photos/165754/pexels-photo-165754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-repeat: no-repeat;
+  width: 100%;
+  overflow-x: hidden; 
+  height: 550px; 
+  background-size: 100% 100%;
+  
+  }
+</style>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% import 'macros.html' as macro%}
+
+<!-- content block -->
+{% block content %}
+
+<h3 class="text-center" style="font-weight:bolder;">{{category.name|upper}} PITCH</h3>
+<hr>
+<div class="zone">
+{% if pitches %}
+
+
+{{ macro.displayPitches(pitches)}}
+
+{%else%}
+<div class="well">
+  <h4 style="padding:10%; text-align:center; font-size:50px; ">OOPS! NO PITCHES AVAILABLE YET.</h4>
+</div>
+
+
+{% endif %}
+<a class="btn btn-primary text-center  bro" href="/category/pitch/new/{{category.id}}" style="margin-left:46%; margin-top: 38px;padding: 15px; font-size: 16px; font-weight: bolder; color: white;">Write a new Pitch</a>
+</div>
+
+
+<style>
+  .bro {
+  width: 160px;
+  height: 50px;
+  background-color: red;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 8s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 8s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  0%   {background-color: red;}
+  
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  0%   {background-color: red;}
+  
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+.zone{
+  background-image: url('https://images.pexels.com/photos/64778/pexels-photo-64778.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  background-repeat: no-repeat;
+  width: 100%;
+  overflow-x: hidden; 
+  height: 850px; 
+  background-size: 100% 100%;
+}
+</style>
+{% endblock %}

@@ -7,21 +7,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-            <a class="navbar-brand" href="/" ></a>
-            <a class="navbar-brand" href="/category/new" style="font-family:fantasy;font-size: 20px; font-weight: bold;">ADD CATEGORY</a>
-            
+
+
 
     </div>
 
-  </div>
+   </div>
   <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav navbar-right" >
+    <ul class="nav navbar-nav navbar-right">
       {% if current_user.is_authenticated %}
-      <li  id="home"><a href="/" style="font-family:fantasy; font-size: 20px; font-weight: bold;">HOME</a></li>
+      <li class="nav-item" id="home"><a href="/" style="font-family:fantasy; font-size: 20px; font-weight: bold;">HOME</a></li>
       <li id="profile"><a href="{{url_for('main.profile',uname=current_user.username)}}" style="font-family:fantasy; font-size: 20px; font-weight: bold;">PROFILE</a></li>
       <li id="sign-out"><a href="{{url_for('auth.logout')}}" style="font-family:fantasy; font-size: 20px; font-weight: bold;">SIGN OUT</a></li>
       {% else %}
-      <li ><a href="/">HOME</a></li>
+      <li ><a href="/" style="font-family:fantasy;font-size: 20px; font-weight: bold;">HOME</a></li>
       <li id="sign-in"><a href="{{url_for('auth.login')}}" style="font-family:fantasy;font-size: 20px; font-weight: bold;">SIGN IN</a></li>
       {%endif%}
     </ul>

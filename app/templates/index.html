@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    {% endblock %}
+{% block content %}
+<div class="heading">
+  
+    <h1 style="font-family:fantasy; font-size: 40px; font-weight: bold; text-align: center;"> <img src="https://i.gifer.com/6cx1.gif" alt="" style="border-radius:20px; height: 80px;"> WELCOME TO THE ONE MINUTE PITCHER <img src="https://i.gifer.com/6cx1.gif" alt="" style="border-radius:20px; height: 80px;"></h1>
+
+
+  </div>
+
+  <h3 style="text-align:center;"><button><a class="navbar-brand" href="/category/new" style="font-family:'Times New Roman', Times, serif;font-size: 20px; font-weight: bold;margin-top: 3%;">ADD CATEGORY</a></button> </h3>
+
+
+<div class="w3-sidebar w3-light-grey w3-bar-block" id="sidebar">
+  
+  
+  <p class="well" style="font-family:fantasy; font-size: 20px; font-weight: bold; text-align: center; margin-top: 2%;">CHOOSE A CATEGORY</p>
+  <div class="one" style="background-image:url('https://images.pexels.com/photos/247772/pexels-photo-247772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');background-repeat: no-repeat;width: 100%;overflow-x: hidden; height: 450px; background-size: 100% 100%;">
+      <div class="row">
+        
+          {{ macro.displayCategoryList(categories) }} 
+                
+        
+      </div>
+        
+        
+        </div>
+        
+      </div>
+</div>
+ 
+    
+
+
+
+{% endblock %}

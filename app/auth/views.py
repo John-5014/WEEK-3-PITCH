@@ -4,6 +4,7 @@ from ..models import User
 from .forms import LoginForm,RegistrationForm
 from . import auth
 from .. import db
+from ..email import mail_message
 
 
 
@@ -16,6 +17,8 @@ def register():
     user = User(email = registration_form.email.data, username = registration_form.username.data,password = registration_form.password.data)
     db.session.add(user)
     db.session.commit()
+
+    mail_message("Welcome to ONE MINUTE PITCHER","email/welcome_user",user.email,user=user)
     return redirect(url_for('auth.login'))
     title = "New Account"
 
@@ -34,7 +37,7 @@ def login():
       return redirect(request.args.get('next') or url_for('main.index'))
 
     flash('invalid username or password')
-  title = "watchlist login"
+  title = "Pitch login"
   return render_template('auth/login.html',login_form = login_form,title = title)
 
 
